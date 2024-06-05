@@ -7,11 +7,11 @@ public class SnakeMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform segmentPrefarb;
-    private List<Transform> _segment;
+    private List<Transform> _segment=new List<Transform>();
+    public int Init = 6;
     private void Start()
     {
-        _segment = new List<Transform>();
-        _segment.Add(this.transform);
+        ResetState();
     }
     void Grow()
     {
@@ -39,6 +39,10 @@ public class SnakeMove : MonoBehaviour
         _segment.Clear();
         _segment.Add(this.transform);
         this.transform.position = Vector3.zero;
+        for(int i = 1; i < Init; i++)
+        {
+            _segment.Add(Instantiate(this.segmentPrefarb));
+        }
     }
     void CheckMove() 
     {
