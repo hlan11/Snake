@@ -25,6 +25,20 @@ public class SnakeMove : MonoBehaviour
         {
             Grow();
         }
+        if (collision.CompareTag("Ground"))
+        {
+            ResetState();
+        }
+    }
+    void ResetState()
+    {
+        for(int i=1;i<_segment.Count;i++)
+        {
+            Destroy(_segment[i].gameObject);
+        }
+        _segment.Clear();
+        _segment.Add(this.transform);
+        this.transform.position = Vector3.zero;
     }
     void CheckMove() 
     {
