@@ -776,9 +776,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f857105ae33ae4fb099cc1852ddaf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   rb: {fileID: 916746500}
   segmentPrefarb: {fileID: 913642064361203262, guid: 021ccc9044acdce46ba628ad07c1d005, type: 3}
+  Init: 6
 --- !u!1 &958066618
 GameObject:
   m_ObjectHideFlags: 0
